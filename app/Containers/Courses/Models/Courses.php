@@ -31,4 +31,9 @@ class Courses extends Model
      * A resource key to be used by the the JSON API Serializer responses.
      */
     protected $resourceKey = 'courses';
+
+    public function students()
+    {
+        return $this->hasMany(\App\Containers\AssignStudentToCourses\Models\AssignStudentToCourses::class);
+    }
 }

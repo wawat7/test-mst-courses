@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Containers\Courses\UI\API\Transformers;
+namespace App\Containers\AssignStudentToCourses\UI\API\Transformers;
 
-use App\Containers\Courses\Models\Courses;
+use App\Containers\AssignStudentToCourses\Models\AssignStudentToCourses;
 use App\Ship\Parents\Transformers\Transformer;
 
-class CoursesTransformer extends Transformer
+class AssignStudentToCoursesTransformer extends Transformer
 {
     /**
      * @var  array
@@ -22,21 +22,20 @@ class CoursesTransformer extends Transformer
     ];
 
     /**
-     * @param Courses $entity
+     * @param AssignStudentToCourses $entity
      *
      * @return array
      */
-    public function transform(Courses $entity)
+    public function transform(AssignStudentToCourses $entity)
     {
         $response = [
-            'object' => 'Courses',
+            'object' => 'AssignStudentToCourses',
             'id' => $entity->getHashedKey(),
-            'name' => $entity->name,
-            'description' => $entity->description,
-            'grade' => $entity->grade,
+            'student_id' => $entity->student_id,
+            'courses_id' => $entity->courses_id,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
-            'students' => $entity->students,
+
         ];
 
         $response = $this->ifAdmin([

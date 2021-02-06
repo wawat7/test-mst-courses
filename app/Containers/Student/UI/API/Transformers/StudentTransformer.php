@@ -36,7 +36,7 @@ class StudentTransformer extends Transformer
             'date_of_birth' => $entity->date_of_birth,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
-
+            'courses' => $entity->courses,
         ];
 
         $response = $this->ifAdmin([

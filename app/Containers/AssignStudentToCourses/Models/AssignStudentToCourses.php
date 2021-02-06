@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Containers\Student\Models;
+namespace App\Containers\AssignStudentToCourses\Models;
 
 use App\Ship\Parents\Models\Model;
 
-class Student extends Model
+class AssignStudentToCourses extends Model
 {
+    protected $table = "student_courses";
     protected $fillable = [
-        'name','gender','date_of_birth'
+        'student_id', 'courses_id'
     ];
 
     protected $attributes = [
@@ -30,10 +31,5 @@ class Student extends Model
     /**
      * A resource key to be used by the the JSON API Serializer responses.
      */
-    protected $resourceKey = 'students';
-
-    public function courses()
-    {
-        return $this->hasMany(\App\Containers\AssignStudentToCourses\Models\AssignStudentToCourses::class);
-    }
+    protected $resourceKey = 'assignstudenttocourses';
 }
