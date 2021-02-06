@@ -4,6 +4,7 @@ namespace App\Containers\AssignStudentToCourses\UI\API\Transformers;
 
 use App\Containers\AssignStudentToCourses\Models\AssignStudentToCourses;
 use App\Ship\Parents\Transformers\Transformer;
+use Hashids;
 
 class AssignStudentToCoursesTransformer extends Transformer
 {
@@ -31,11 +32,10 @@ class AssignStudentToCoursesTransformer extends Transformer
         $response = [
             'object' => 'AssignStudentToCourses',
             'id' => $entity->getHashedKey(),
-            'student_id' => $entity->student_id,
-            'courses_id' => $entity->courses_id,
+            'student_id' => Hashids::encode($entity->student_id),
+            'courses_id' => Hashids::encode($entity->courses_id),
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
-
         ];
 
         $response = $this->ifAdmin([
