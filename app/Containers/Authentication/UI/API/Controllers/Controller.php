@@ -86,4 +86,9 @@ class Controller extends ApiController
 
         return $this->json($result['response-content'])->withCookie($result['refresh-cookie']);
     }
+
+    public function Login(LoginRequest $request)
+    {
+
+    }
 }
