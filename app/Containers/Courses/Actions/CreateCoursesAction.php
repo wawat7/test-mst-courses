@@ -11,7 +11,7 @@ class CreateCoursesAction extends Action
     public function run(Request $request)
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'name', 'description', 'grade'
         ]);
 
         $courses = Apiato::call('Courses@CreateCoursesTask', [$data]);

@@ -7,7 +7,7 @@ use App\Ship\Parents\Models\Model;
 class Courses extends Model
 {
     protected $fillable = [
-
+        'name', 'description', 'grade'
     ];
 
     protected $attributes = [

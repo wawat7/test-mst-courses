@@ -33,7 +33,7 @@ class UpdateCoursesRequest extends Request
      * @var  array
      */
     protected $decode = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -43,7 +43,7 @@ class UpdateCoursesRequest extends Request
      * @var  array
      */
     protected $urlParameters = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -52,8 +52,9 @@ class UpdateCoursesRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
-            // '{user-input}' => 'required|max:255',
+            'name' => 'required',
+            'description' => 'required',
+            'grade' => 'required',
         ];
     }
 

@@ -31,6 +31,9 @@ class CoursesTransformer extends Transformer
         $response = [
             'object' => 'Courses',
             'id' => $entity->getHashedKey(),
+            'name' => $entity->name,
+            'description' => $entity->description,
+            'grade' => $entity->grade,
             'created_at' => $entity->created_at,
             'updated_at' => $entity->updated_at,
 
